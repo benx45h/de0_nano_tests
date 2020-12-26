@@ -1,0 +1,807 @@
+Analysis & Synthesis report for top
+Tue Sep 15 11:44:29 2020
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Protected by Synthesis
+  9. General Register Statistics
+ 10. Source assignments for cd_sync:cd_sync|reset_sync:reset_sync|altera_std_synchronizer:U$$0
+ 11. Parameter Settings for User Entity Instance: cd_sync:cd_sync|reset_sync:reset_sync|altera_std_synchronizer:U$$0
+ 12. Parameter Settings for User Entity Instance: pin_clk50_0:pin_clk50_0|altiobuf_in:clk50_0
+ 13. Parameter Settings for User Entity Instance: pin_led_0:pin_led_0|altiobuf_out:led_0
+ 14. Parameter Settings for User Entity Instance: pin_led_1:pin_led_1|altiobuf_out:led_1
+ 15. Parameter Settings for User Entity Instance: pin_led_2:pin_led_2|altiobuf_out:led_2
+ 16. Parameter Settings for User Entity Instance: pin_led_3:pin_led_3|altiobuf_out:led_3
+ 17. Parameter Settings for User Entity Instance: pin_led_4:pin_led_4|altiobuf_out:led_4
+ 18. Parameter Settings for User Entity Instance: pin_led_5:pin_led_5|altiobuf_out:led_5
+ 19. Parameter Settings for User Entity Instance: pin_led_6:pin_led_6|altiobuf_out:led_6
+ 20. Parameter Settings for User Entity Instance: pin_led_7:pin_led_7|altiobuf_out:led_7
+ 21. Parameter Settings for User Entity Instance: pin_switch_0:pin_switch_0|altiobuf_in:switch_0
+ 22. Parameter Settings for User Entity Instance: pin_switch_1:pin_switch_1|altiobuf_in:switch_1
+ 23. Parameter Settings for User Entity Instance: pin_switch_2:pin_switch_2|altiobuf_in:switch_2
+ 24. Parameter Settings for User Entity Instance: pin_switch_3:pin_switch_3|altiobuf_in:switch_3
+ 25. Port Connectivity Checks: "cd_sync:cd_sync|reset_sync:reset_sync|altera_std_synchronizer:U$$0"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+ 29. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Sep 15 11:44:29 2020       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                      ; top                                         ;
+; Top-level Entity Name              ; top                                         ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 42                                          ;
+;     Total combinational functions  ; 40                                          ;
+;     Dedicated logic registers      ; 34                                          ;
+; Total registers                    ; 34                                          ;
+; Total pins                         ; 13                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; top                ; top                ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; top.v                            ; yes             ; User Verilog HDL File        ; /home/ben/code/de0_nano/build/top.v                                           ;         ;
+; altera_std_synchronizer.v        ; yes             ; Megafunction                 ; /opt/intelFPGA/20.1/quartus/libraries/megafunctions/altera_std_synchronizer.v ;         ;
+; altiobuf_in.tdf                  ; yes             ; Megafunction                 ; /opt/intelFPGA/20.1/quartus/libraries/megafunctions/altiobuf_in.tdf           ;         ;
+; db/iobuf_in_sof.tdf              ; yes             ; Auto-Generated Megafunction  ; /home/ben/code/de0_nano/build/db/iobuf_in_sof.tdf                             ;         ;
+; altiobuf_out.tdf                 ; yes             ; Megafunction                 ; /opt/intelFPGA/20.1/quartus/libraries/megafunctions/altiobuf_out.tdf          ;         ;
+; db/iobuf_out_96h.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ben/code/de0_nano/build/db/iobuf_out_96h.tdf                            ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                      ;
++---------------------------------------------+------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                              ;
++---------------------------------------------+------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 42                                                                                 ;
+;                                             ;                                                                                    ;
+; Total combinational functions               ; 40                                                                                 ;
+; Logic element usage by number of LUT inputs ;                                                                                    ;
+;     -- 4 input functions                    ; 0                                                                                  ;
+;     -- 3 input functions                    ; 0                                                                                  ;
+;     -- <=2 input functions                  ; 40                                                                                 ;
+;                                             ;                                                                                    ;
+; Logic elements by mode                      ;                                                                                    ;
+;     -- normal mode                          ; 9                                                                                  ;
+;     -- arithmetic mode                      ; 31                                                                                 ;
+;                                             ;                                                                                    ;
+; Total registers                             ; 34                                                                                 ;
+;     -- Dedicated logic registers            ; 34                                                                                 ;
+;     -- I/O registers                        ; 0                                                                                  ;
+;                                             ;                                                                                    ;
+; I/O pins                                    ; 13                                                                                 ;
+;                                             ;                                                                                    ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                  ;
+;                                             ;                                                                                    ;
+; Maximum fan-out node                        ; pin_clk50_0:pin_clk50_0|altiobuf_in:clk50_0|iobuf_in_sof:auto_generated|dataout[0] ;
+; Maximum fan-out                             ; 34                                                                                 ;
+; Total fan-out                               ; 199                                                                                ;
+; Average fan-out                             ; 1.99                                                                               ;
++---------------------------------------------+------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                           ;
++-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+-------------------------+--------------+
+; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                             ; Entity Name             ; Library Name ;
++-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+-------------------------+--------------+
+; |top                                    ; 40 (40)             ; 34 (32)                   ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |top                                                                            ; top                     ; work         ;
+;    |cd_sync:cd_sync|                    ; 0 (0)               ; 2 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cd_sync:cd_sync                                                            ; cd_sync                 ; work         ;
+;       |reset_sync:reset_sync|           ; 0 (0)               ; 2 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cd_sync:cd_sync|reset_sync:reset_sync                                      ; reset_sync              ; work         ;
+;          |altera_std_synchronizer:U$$0| ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cd_sync:cd_sync|reset_sync:reset_sync|altera_std_synchronizer:U$$0         ; altera_std_synchronizer ; work         ;
+;    |pin_clk50_0:pin_clk50_0|            ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_clk50_0:pin_clk50_0                                                    ; pin_clk50_0             ; work         ;
+;       |altiobuf_in:clk50_0|             ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_clk50_0:pin_clk50_0|altiobuf_in:clk50_0                                ; altiobuf_in             ; work         ;
+;          |iobuf_in_sof:auto_generated|  ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_clk50_0:pin_clk50_0|altiobuf_in:clk50_0|iobuf_in_sof:auto_generated    ; iobuf_in_sof            ; work         ;
+;    |pin_led_0:pin_led_0|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_0:pin_led_0                                                        ; pin_led_0               ; work         ;
+;       |altiobuf_out:led_0|              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_0:pin_led_0|altiobuf_out:led_0                                     ; altiobuf_out            ; work         ;
+;          |iobuf_out_96h:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_0:pin_led_0|altiobuf_out:led_0|iobuf_out_96h:auto_generated        ; iobuf_out_96h           ; work         ;
+;    |pin_led_1:pin_led_1|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_1:pin_led_1                                                        ; pin_led_1               ; work         ;
+;       |altiobuf_out:led_1|              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_1:pin_led_1|altiobuf_out:led_1                                     ; altiobuf_out            ; work         ;
+;          |iobuf_out_96h:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_1:pin_led_1|altiobuf_out:led_1|iobuf_out_96h:auto_generated        ; iobuf_out_96h           ; work         ;
+;    |pin_led_2:pin_led_2|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_2:pin_led_2                                                        ; pin_led_2               ; work         ;
+;       |altiobuf_out:led_2|              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_2:pin_led_2|altiobuf_out:led_2                                     ; altiobuf_out            ; work         ;
+;          |iobuf_out_96h:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_2:pin_led_2|altiobuf_out:led_2|iobuf_out_96h:auto_generated        ; iobuf_out_96h           ; work         ;
+;    |pin_led_3:pin_led_3|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_3:pin_led_3                                                        ; pin_led_3               ; work         ;
+;       |altiobuf_out:led_3|              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_3:pin_led_3|altiobuf_out:led_3                                     ; altiobuf_out            ; work         ;
+;          |iobuf_out_96h:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_3:pin_led_3|altiobuf_out:led_3|iobuf_out_96h:auto_generated        ; iobuf_out_96h           ; work         ;
+;    |pin_led_4:pin_led_4|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_4:pin_led_4                                                        ; pin_led_4               ; work         ;
+;       |altiobuf_out:led_4|              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_4:pin_led_4|altiobuf_out:led_4                                     ; altiobuf_out            ; work         ;
+;          |iobuf_out_96h:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_4:pin_led_4|altiobuf_out:led_4|iobuf_out_96h:auto_generated        ; iobuf_out_96h           ; work         ;
+;    |pin_led_5:pin_led_5|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_5:pin_led_5                                                        ; pin_led_5               ; work         ;
+;       |altiobuf_out:led_5|              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_5:pin_led_5|altiobuf_out:led_5                                     ; altiobuf_out            ; work         ;
+;          |iobuf_out_96h:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_5:pin_led_5|altiobuf_out:led_5|iobuf_out_96h:auto_generated        ; iobuf_out_96h           ; work         ;
+;    |pin_led_6:pin_led_6|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_6:pin_led_6                                                        ; pin_led_6               ; work         ;
+;       |altiobuf_out:led_6|              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_6:pin_led_6|altiobuf_out:led_6                                     ; altiobuf_out            ; work         ;
+;          |iobuf_out_96h:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_6:pin_led_6|altiobuf_out:led_6|iobuf_out_96h:auto_generated        ; iobuf_out_96h           ; work         ;
+;    |pin_led_7:pin_led_7|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_7:pin_led_7                                                        ; pin_led_7               ; work         ;
+;       |altiobuf_out:led_7|              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_7:pin_led_7|altiobuf_out:led_7                                     ; altiobuf_out            ; work         ;
+;          |iobuf_out_96h:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_led_7:pin_led_7|altiobuf_out:led_7|iobuf_out_96h:auto_generated        ; iobuf_out_96h           ; work         ;
+;    |pin_switch_0:pin_switch_0|          ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_switch_0:pin_switch_0                                                  ; pin_switch_0            ; work         ;
+;       |altiobuf_in:switch_0|            ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_switch_0:pin_switch_0|altiobuf_in:switch_0                             ; altiobuf_in             ; work         ;
+;          |iobuf_in_sof:auto_generated|  ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_switch_0:pin_switch_0|altiobuf_in:switch_0|iobuf_in_sof:auto_generated ; iobuf_in_sof            ; work         ;
+;    |pin_switch_1:pin_switch_1|          ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_switch_1:pin_switch_1                                                  ; pin_switch_1            ; work         ;
+;       |altiobuf_in:switch_1|            ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_switch_1:pin_switch_1|altiobuf_in:switch_1                             ; altiobuf_in             ; work         ;
+;          |iobuf_in_sof:auto_generated|  ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_switch_1:pin_switch_1|altiobuf_in:switch_1|iobuf_in_sof:auto_generated ; iobuf_in_sof            ; work         ;
+;    |pin_switch_2:pin_switch_2|          ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_switch_2:pin_switch_2                                                  ; pin_switch_2            ; work         ;
+;       |altiobuf_in:switch_2|            ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_switch_2:pin_switch_2|altiobuf_in:switch_2                             ; altiobuf_in             ; work         ;
+;          |iobuf_in_sof:auto_generated|  ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_switch_2:pin_switch_2|altiobuf_in:switch_2|iobuf_in_sof:auto_generated ; iobuf_in_sof            ; work         ;
+;    |pin_switch_3:pin_switch_3|          ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_switch_3:pin_switch_3                                                  ; pin_switch_3            ; work         ;
+;       |altiobuf_in:switch_3|            ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_switch_3:pin_switch_3|altiobuf_in:switch_3                             ; altiobuf_in             ; work         ;
+;          |iobuf_in_sof:auto_generated|  ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|pin_switch_3:pin_switch_3|altiobuf_in:switch_3|iobuf_in_sof:auto_generated ; iobuf_in_sof            ; work         ;
++-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+-------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Protected by Synthesis                                                                                                                                                           ;
++----------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; Register Name                                                              ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
++----------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; cd_sync:cd_sync|reset_sync:reset_sync|altera_std_synchronizer:U$$0|dreg[0] ; yes                                                              ; yes                                        ;
+; cd_sync:cd_sync|reset_sync:reset_sync|altera_std_synchronizer:U$$0|din_s1  ; yes                                                              ; yes                                        ;
+; Total number of protected registers is 2                                   ;                                                                  ;                                            ;
++----------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 34    ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------+
+; Source assignments for cd_sync:cd_sync|reset_sync:reset_sync|altera_std_synchronizer:U$$0 ;
++-----------------------------+------------------------+------+-----------------------------+
+; Assignment                  ; Value                  ; From ; To                          ;
++-----------------------------+------------------------+------+-----------------------------+
+; ADV_NETLIST_OPT_ALLOWED     ; NEVER_ALLOW            ; -    ; dreg[0]                     ;
+; SYNCHRONIZER_IDENTIFICATION ; FORCED_IF_ASYNCHRONOUS ; -    ; dreg[0]                     ;
+; DONT_MERGE_REGISTER         ; ON                     ; -    ; dreg[0]                     ;
+; PRESERVE_REGISTER           ; ON                     ; -    ; dreg[0]                     ;
+; ADV_NETLIST_OPT_ALLOWED     ; NEVER_ALLOW            ; -    ; din_s1                      ;
+; SYNCHRONIZER_IDENTIFICATION ; FORCED_IF_ASYNCHRONOUS ; -    ; din_s1                      ;
+; DONT_MERGE_REGISTER         ; ON                     ; -    ; din_s1                      ;
+; PRESERVE_REGISTER           ; ON                     ; -    ; din_s1                      ;
++-----------------------------+------------------------+------+-----------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cd_sync:cd_sync|reset_sync:reset_sync|altera_std_synchronizer:U$$0 ;
++----------------+----------------------------------+-------------------------------------------------------------+
+; Parameter Name ; Value                            ; Type                                                        ;
++----------------+----------------------------------+-------------------------------------------------------------+
+; depth          ; 00000000000000000000000000000010 ; Unsigned Binary                                             ;
++----------------+----------------------------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pin_clk50_0:pin_clk50_0|altiobuf_in:clk50_0 ;
++---------------------------------+----------------------------------+---------------------+
+; Parameter Name                  ; Value                            ; Type                ;
++---------------------------------+----------------------------------+---------------------+
+; ENABLE_BUS_HOLD_CIRCUITRY       ; FALSE                            ; ENABLE_BUS_HOLD     ;
+; NUMBER_OF_CHANNELS              ; 00000000000000000000000000000001 ; Unsigned Binary     ;
+; USE_DIFFERENTIAL_MODE           ; FALSE                            ; Untyped             ;
+; USE_DYNAMIC_TERMINATION_CONTROL ; FALSE                            ; Untyped             ;
+; USE_IN_DYNAMIC_DELAY_CHAIN      ; FALSE                            ; Untyped             ;
+; CBXI_PARAMETER                  ; iobuf_in_sof                     ; Untyped             ;
++---------------------------------+----------------------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pin_led_0:pin_led_0|altiobuf_out:led_0        ;
++---------------------------------------+----------------------------------+-----------------+
+; Parameter Name                        ; Value                            ; Type            ;
++---------------------------------------+----------------------------------+-----------------+
+; ENABLE_BUS_HOLD_CIRCUITRY             ; FALSE                            ; ENABLE_BUS_HOLD ;
+; LEFT_SHIFT_SERIES_TERMINATION_CONTROL ; FALSE                            ; Untyped         ;
+; NUMBER_OF_CHANNELS                    ; 00000000000000000000000000000001 ; Unsigned Binary ;
+; OPEN_DRAIN_OUTPUT                     ; FALSE                            ; Untyped         ;
+; PSEUDO_DIFFERENTIAL_MODE              ; FALSE                            ; Untyped         ;
+; USE_DIFFERENTIAL_MODE                 ; FALSE                            ; Untyped         ;
+; USE_OE                                ; FALSE                            ; Untyped         ;
+; USE_OUT_DYNAMIC_DELAY_CHAIN1          ; FALSE                            ; Untyped         ;
+; USE_OUT_DYNAMIC_DELAY_CHAIN2          ; FALSE                            ; Untyped         ;
+; USE_TERMINATION_CONTROL               ; FALSE                            ; Untyped         ;
+; WIDTH_PTC                             ; 14                               ; Untyped         ;
+; WIDTH_STC                             ; 14                               ; Untyped         ;
+; CBXI_PARAMETER                        ; iobuf_out_96h                    ; Untyped         ;
++---------------------------------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pin_led_1:pin_led_1|altiobuf_out:led_1        ;
++---------------------------------------+----------------------------------+-----------------+
+; Parameter Name                        ; Value                            ; Type            ;
++---------------------------------------+----------------------------------+-----------------+
+; ENABLE_BUS_HOLD_CIRCUITRY             ; FALSE                            ; ENABLE_BUS_HOLD ;
+; LEFT_SHIFT_SERIES_TERMINATION_CONTROL ; FALSE                            ; Untyped         ;
+; NUMBER_OF_CHANNELS                    ; 00000000000000000000000000000001 ; Unsigned Binary ;
+; OPEN_DRAIN_OUTPUT                     ; FALSE                            ; Untyped         ;
+; PSEUDO_DIFFERENTIAL_MODE              ; FALSE                            ; Untyped         ;
+; USE_DIFFERENTIAL_MODE                 ; FALSE                            ; Untyped         ;
+; USE_OE                                ; FALSE                            ; Untyped         ;
+; USE_OUT_DYNAMIC_DELAY_CHAIN1          ; FALSE                            ; Untyped         ;
+; USE_OUT_DYNAMIC_DELAY_CHAIN2          ; FALSE                            ; Untyped         ;
+; USE_TERMINATION_CONTROL               ; FALSE                            ; Untyped         ;
+; WIDTH_PTC                             ; 14                               ; Untyped         ;
+; WIDTH_STC                             ; 14                               ; Untyped         ;
+; CBXI_PARAMETER                        ; iobuf_out_96h                    ; Untyped         ;
++---------------------------------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pin_led_2:pin_led_2|altiobuf_out:led_2        ;
++---------------------------------------+----------------------------------+-----------------+
+; Parameter Name                        ; Value                            ; Type            ;
++---------------------------------------+----------------------------------+-----------------+
+; ENABLE_BUS_HOLD_CIRCUITRY             ; FALSE                            ; ENABLE_BUS_HOLD ;
+; LEFT_SHIFT_SERIES_TERMINATION_CONTROL ; FALSE                            ; Untyped         ;
+; NUMBER_OF_CHANNELS                    ; 00000000000000000000000000000001 ; Unsigned Binary ;
+; OPEN_DRAIN_OUTPUT                     ; FALSE                            ; Untyped         ;
+; PSEUDO_DIFFERENTIAL_MODE              ; FALSE                            ; Untyped         ;
+; USE_DIFFERENTIAL_MODE                 ; FALSE                            ; Untyped         ;
+; USE_OE                                ; FALSE                            ; Untyped         ;
+; USE_OUT_DYNAMIC_DELAY_CHAIN1          ; FALSE                            ; Untyped         ;
+; USE_OUT_DYNAMIC_DELAY_CHAIN2          ; FALSE                            ; Untyped         ;
+; USE_TERMINATION_CONTROL               ; FALSE                            ; Untyped         ;
+; WIDTH_PTC                             ; 14                               ; Untyped         ;
+; WIDTH_STC                             ; 14                               ; Untyped         ;
+; CBXI_PARAMETER                        ; iobuf_out_96h                    ; Untyped         ;
++---------------------------------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pin_led_3:pin_led_3|altiobuf_out:led_3        ;
++---------------------------------------+----------------------------------+-----------------+
+; Parameter Name                        ; Value                            ; Type            ;
++---------------------------------------+----------------------------------+-----------------+
+; ENABLE_BUS_HOLD_CIRCUITRY             ; FALSE                            ; ENABLE_BUS_HOLD ;
+; LEFT_SHIFT_SERIES_TERMINATION_CONTROL ; FALSE                            ; Untyped         ;
+; NUMBER_OF_CHANNELS                    ; 00000000000000000000000000000001 ; Unsigned Binary ;
+; OPEN_DRAIN_OUTPUT                     ; FALSE                            ; Untyped         ;
+; PSEUDO_DIFFERENTIAL_MODE              ; FALSE                            ; Untyped         ;
+; USE_DIFFERENTIAL_MODE                 ; FALSE                            ; Untyped         ;
+; USE_OE                                ; FALSE                            ; Untyped         ;
+; USE_OUT_DYNAMIC_DELAY_CHAIN1          ; FALSE                            ; Untyped         ;
+; USE_OUT_DYNAMIC_DELAY_CHAIN2          ; FALSE                            ; Untyped         ;
+; USE_TERMINATION_CONTROL               ; FALSE                            ; Untyped         ;
+; WIDTH_PTC                             ; 14                               ; Untyped         ;
+; WIDTH_STC                             ; 14                               ; Untyped         ;
+; CBXI_PARAMETER                        ; iobuf_out_96h                    ; Untyped         ;
++---------------------------------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pin_led_4:pin_led_4|altiobuf_out:led_4        ;
++---------------------------------------+----------------------------------+-----------------+
+; Parameter Name                        ; Value                            ; Type            ;
++---------------------------------------+----------------------------------+-----------------+
+; ENABLE_BUS_HOLD_CIRCUITRY             ; FALSE                            ; ENABLE_BUS_HOLD ;
+; LEFT_SHIFT_SERIES_TERMINATION_CONTROL ; FALSE                            ; Untyped         ;
+; NUMBER_OF_CHANNELS                    ; 00000000000000000000000000000001 ; Unsigned Binary ;
+; OPEN_DRAIN_OUTPUT                     ; FALSE                            ; Untyped         ;
+; PSEUDO_DIFFERENTIAL_MODE              ; FALSE                            ; Untyped         ;
+; USE_DIFFERENTIAL_MODE                 ; FALSE                            ; Untyped         ;
+; USE_OE                                ; FALSE                            ; Untyped         ;
+; USE_OUT_DYNAMIC_DELAY_CHAIN1          ; FALSE                            ; Untyped         ;
+; USE_OUT_DYNAMIC_DELAY_CHAIN2          ; FALSE                            ; Untyped         ;
+; USE_TERMINATION_CONTROL               ; FALSE                            ; Untyped         ;
+; WIDTH_PTC                             ; 14                               ; Untyped         ;
+; WIDTH_STC                             ; 14                               ; Untyped         ;
+; CBXI_PARAMETER                        ; iobuf_out_96h                    ; Untyped         ;
++---------------------------------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pin_led_5:pin_led_5|altiobuf_out:led_5        ;
++---------------------------------------+----------------------------------+-----------------+
+; Parameter Name                        ; Value                            ; Type            ;
++---------------------------------------+----------------------------------+-----------------+
+; ENABLE_BUS_HOLD_CIRCUITRY             ; FALSE                            ; ENABLE_BUS_HOLD ;
+; LEFT_SHIFT_SERIES_TERMINATION_CONTROL ; FALSE                            ; Untyped         ;
+; NUMBER_OF_CHANNELS                    ; 00000000000000000000000000000001 ; Unsigned Binary ;
+; OPEN_DRAIN_OUTPUT                     ; FALSE                            ; Untyped         ;
+; PSEUDO_DIFFERENTIAL_MODE              ; FALSE                            ; Untyped         ;
+; USE_DIFFERENTIAL_MODE                 ; FALSE                            ; Untyped         ;
+; USE_OE                                ; FALSE                            ; Untyped         ;
+; USE_OUT_DYNAMIC_DELAY_CHAIN1          ; FALSE                            ; Untyped         ;
+; USE_OUT_DYNAMIC_DELAY_CHAIN2          ; FALSE                            ; Untyped         ;
+; USE_TERMINATION_CONTROL               ; FALSE                            ; Untyped         ;
+; WIDTH_PTC                             ; 14                               ; Untyped         ;
+; WIDTH_STC                             ; 14                               ; Untyped         ;
+; CBXI_PARAMETER                        ; iobuf_out_96h                    ; Untyped         ;
++---------------------------------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pin_led_6:pin_led_6|altiobuf_out:led_6        ;
++---------------------------------------+----------------------------------+-----------------+
+; Parameter Name                        ; Value                            ; Type            ;
++---------------------------------------+----------------------------------+-----------------+
+; ENABLE_BUS_HOLD_CIRCUITRY             ; FALSE                            ; ENABLE_BUS_HOLD ;
+; LEFT_SHIFT_SERIES_TERMINATION_CONTROL ; FALSE                            ; Untyped         ;
+; NUMBER_OF_CHANNELS                    ; 00000000000000000000000000000001 ; Unsigned Binary ;
+; OPEN_DRAIN_OUTPUT                     ; FALSE                            ; Untyped         ;
+; PSEUDO_DIFFERENTIAL_MODE              ; FALSE                            ; Untyped         ;
+; USE_DIFFERENTIAL_MODE                 ; FALSE                            ; Untyped         ;
+; USE_OE                                ; FALSE                            ; Untyped         ;
+; USE_OUT_DYNAMIC_DELAY_CHAIN1          ; FALSE                            ; Untyped         ;
+; USE_OUT_DYNAMIC_DELAY_CHAIN2          ; FALSE                            ; Untyped         ;
+; USE_TERMINATION_CONTROL               ; FALSE                            ; Untyped         ;
+; WIDTH_PTC                             ; 14                               ; Untyped         ;
+; WIDTH_STC                             ; 14                               ; Untyped         ;
+; CBXI_PARAMETER                        ; iobuf_out_96h                    ; Untyped         ;
++---------------------------------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pin_led_7:pin_led_7|altiobuf_out:led_7        ;
++---------------------------------------+----------------------------------+-----------------+
+; Parameter Name                        ; Value                            ; Type            ;
++---------------------------------------+----------------------------------+-----------------+
+; ENABLE_BUS_HOLD_CIRCUITRY             ; FALSE                            ; ENABLE_BUS_HOLD ;
+; LEFT_SHIFT_SERIES_TERMINATION_CONTROL ; FALSE                            ; Untyped         ;
+; NUMBER_OF_CHANNELS                    ; 00000000000000000000000000000001 ; Unsigned Binary ;
+; OPEN_DRAIN_OUTPUT                     ; FALSE                            ; Untyped         ;
+; PSEUDO_DIFFERENTIAL_MODE              ; FALSE                            ; Untyped         ;
+; USE_DIFFERENTIAL_MODE                 ; FALSE                            ; Untyped         ;
+; USE_OE                                ; FALSE                            ; Untyped         ;
+; USE_OUT_DYNAMIC_DELAY_CHAIN1          ; FALSE                            ; Untyped         ;
+; USE_OUT_DYNAMIC_DELAY_CHAIN2          ; FALSE                            ; Untyped         ;
+; USE_TERMINATION_CONTROL               ; FALSE                            ; Untyped         ;
+; WIDTH_PTC                             ; 14                               ; Untyped         ;
+; WIDTH_STC                             ; 14                               ; Untyped         ;
+; CBXI_PARAMETER                        ; iobuf_out_96h                    ; Untyped         ;
++---------------------------------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pin_switch_0:pin_switch_0|altiobuf_in:switch_0 ;
++---------------------------------+----------------------------------+------------------------+
+; Parameter Name                  ; Value                            ; Type                   ;
++---------------------------------+----------------------------------+------------------------+
+; ENABLE_BUS_HOLD_CIRCUITRY       ; FALSE                            ; ENABLE_BUS_HOLD        ;
+; NUMBER_OF_CHANNELS              ; 00000000000000000000000000000001 ; Unsigned Binary        ;
+; USE_DIFFERENTIAL_MODE           ; FALSE                            ; Untyped                ;
+; USE_DYNAMIC_TERMINATION_CONTROL ; FALSE                            ; Untyped                ;
+; USE_IN_DYNAMIC_DELAY_CHAIN      ; FALSE                            ; Untyped                ;
+; CBXI_PARAMETER                  ; iobuf_in_sof                     ; Untyped                ;
++---------------------------------+----------------------------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pin_switch_1:pin_switch_1|altiobuf_in:switch_1 ;
++---------------------------------+----------------------------------+------------------------+
+; Parameter Name                  ; Value                            ; Type                   ;
++---------------------------------+----------------------------------+------------------------+
+; ENABLE_BUS_HOLD_CIRCUITRY       ; FALSE                            ; ENABLE_BUS_HOLD        ;
+; NUMBER_OF_CHANNELS              ; 00000000000000000000000000000001 ; Unsigned Binary        ;
+; USE_DIFFERENTIAL_MODE           ; FALSE                            ; Untyped                ;
+; USE_DYNAMIC_TERMINATION_CONTROL ; FALSE                            ; Untyped                ;
+; USE_IN_DYNAMIC_DELAY_CHAIN      ; FALSE                            ; Untyped                ;
+; CBXI_PARAMETER                  ; iobuf_in_sof                     ; Untyped                ;
++---------------------------------+----------------------------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pin_switch_2:pin_switch_2|altiobuf_in:switch_2 ;
++---------------------------------+----------------------------------+------------------------+
+; Parameter Name                  ; Value                            ; Type                   ;
++---------------------------------+----------------------------------+------------------------+
+; ENABLE_BUS_HOLD_CIRCUITRY       ; FALSE                            ; ENABLE_BUS_HOLD        ;
+; NUMBER_OF_CHANNELS              ; 00000000000000000000000000000001 ; Unsigned Binary        ;
+; USE_DIFFERENTIAL_MODE           ; FALSE                            ; Untyped                ;
+; USE_DYNAMIC_TERMINATION_CONTROL ; FALSE                            ; Untyped                ;
+; USE_IN_DYNAMIC_DELAY_CHAIN      ; FALSE                            ; Untyped                ;
+; CBXI_PARAMETER                  ; iobuf_in_sof                     ; Untyped                ;
++---------------------------------+----------------------------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pin_switch_3:pin_switch_3|altiobuf_in:switch_3 ;
++---------------------------------+----------------------------------+------------------------+
+; Parameter Name                  ; Value                            ; Type                   ;
++---------------------------------+----------------------------------+------------------------+
+; ENABLE_BUS_HOLD_CIRCUITRY       ; FALSE                            ; ENABLE_BUS_HOLD        ;
+; NUMBER_OF_CHANNELS              ; 00000000000000000000000000000001 ; Unsigned Binary        ;
+; USE_DIFFERENTIAL_MODE           ; FALSE                            ; Untyped                ;
+; USE_DYNAMIC_TERMINATION_CONTROL ; FALSE                            ; Untyped                ;
+; USE_IN_DYNAMIC_DELAY_CHAIN      ; FALSE                            ; Untyped                ;
+; CBXI_PARAMETER                  ; iobuf_in_sof                     ; Untyped                ;
++---------------------------------+----------------------------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cd_sync:cd_sync|reset_sync:reset_sync|altera_std_synchronizer:U$$0" ;
++---------+-------+----------+-------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                           ;
++---------+-------+----------+-------------------------------------------------------------------+
+; din     ; Input ; Info     ; Stuck at VCC                                                      ;
+; reset_n ; Input ; Info     ; Stuck at VCC                                                      ;
++---------+-------+----------+-------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 13                          ;
+; cycloneiii_ff         ; 34                          ;
+;     SCLR              ; 32                          ;
+;     plain             ; 2                           ;
+; cycloneiii_io_ibuf    ; 5                           ;
+; cycloneiii_io_obuf    ; 8                           ;
+; cycloneiii_lcell_comb ; 40                          ;
+;     arith             ; 31                          ;
+;         2 data inputs ; 31                          ;
+;     normal            ; 9                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 8                           ;
+;                       ;                             ;
+; Max LUT depth         ; 4.10                        ;
+; Average LUT depth     ; 2.49                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Copyright (C) 2020  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Tue Sep 15 11:44:08 2020
+Info: Command: quartus_map --rev=top top
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 16 design units, including 16 entities, in source file top.v
+    Info (12023): Found entity 1: cd_sync File: /home/ben/code/de0_nano/build/top.v Line: 4
+    Info (12023): Found entity 2: pin_clk50_0 File: /home/ben/code/de0_nano/build/top.v Line: 22
+    Info (12023): Found entity 3: pin_led_0 File: /home/ben/code/de0_nano/build/top.v Line: 36
+    Info (12023): Found entity 4: pin_led_1 File: /home/ben/code/de0_nano/build/top.v Line: 50
+    Info (12023): Found entity 5: pin_led_2 File: /home/ben/code/de0_nano/build/top.v Line: 64
+    Info (12023): Found entity 6: pin_led_3 File: /home/ben/code/de0_nano/build/top.v Line: 78
+    Info (12023): Found entity 7: pin_led_4 File: /home/ben/code/de0_nano/build/top.v Line: 92
+    Info (12023): Found entity 8: pin_led_5 File: /home/ben/code/de0_nano/build/top.v Line: 106
+    Info (12023): Found entity 9: pin_led_6 File: /home/ben/code/de0_nano/build/top.v Line: 120
+    Info (12023): Found entity 10: pin_led_7 File: /home/ben/code/de0_nano/build/top.v Line: 134
+    Info (12023): Found entity 11: pin_switch_0 File: /home/ben/code/de0_nano/build/top.v Line: 148
+    Info (12023): Found entity 12: pin_switch_1 File: /home/ben/code/de0_nano/build/top.v Line: 161
+    Info (12023): Found entity 13: pin_switch_2 File: /home/ben/code/de0_nano/build/top.v Line: 174
+    Info (12023): Found entity 14: pin_switch_3 File: /home/ben/code/de0_nano/build/top.v Line: 187
+    Info (12023): Found entity 15: reset_sync File: /home/ben/code/de0_nano/build/top.v Line: 200
+    Info (12023): Found entity 16: top File: /home/ben/code/de0_nano/build/top.v Line: 225
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Info (12128): Elaborating entity "cd_sync" for hierarchy "cd_sync:cd_sync" File: /home/ben/code/de0_nano/build/top.v Line: 296
+Info (12128): Elaborating entity "reset_sync" for hierarchy "cd_sync:cd_sync|reset_sync:reset_sync" File: /home/ben/code/de0_nano/build/top.v Line: 14
+Info (12128): Elaborating entity "altera_std_synchronizer" for hierarchy "cd_sync:cd_sync|reset_sync:reset_sync|altera_std_synchronizer:U$$0" File: /home/ben/code/de0_nano/build/top.v Line: 217
+Info (12130): Elaborated megafunction instantiation "cd_sync:cd_sync|reset_sync:reset_sync|altera_std_synchronizer:U$$0" File: /home/ben/code/de0_nano/build/top.v Line: 217
+Info (12133): Instantiated megafunction "cd_sync:cd_sync|reset_sync:reset_sync|altera_std_synchronizer:U$$0" with the following parameter: File: /home/ben/code/de0_nano/build/top.v Line: 217
+    Info (12134): Parameter "depth" = "00000000000000000000000000000010"
+Info (12128): Elaborating entity "pin_clk50_0" for hierarchy "pin_clk50_0:pin_clk50_0" File: /home/ben/code/de0_nano/build/top.v Line: 300
+Info (12128): Elaborating entity "altiobuf_in" for hierarchy "pin_clk50_0:pin_clk50_0|altiobuf_in:clk50_0" File: /home/ben/code/de0_nano/build/top.v Line: 33
+Info (12130): Elaborated megafunction instantiation "pin_clk50_0:pin_clk50_0|altiobuf_in:clk50_0" File: /home/ben/code/de0_nano/build/top.v Line: 33
+Info (12133): Instantiated megafunction "pin_clk50_0:pin_clk50_0|altiobuf_in:clk50_0" with the following parameter: File: /home/ben/code/de0_nano/build/top.v Line: 33
+    Info (12134): Parameter "enable_bus_hold" = "FALSE"
+    Info (12134): Parameter "number_of_channels" = "00000000000000000000000000000001"
+    Info (12134): Parameter "use_differential_mode" = "FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/iobuf_in_sof.tdf
+    Info (12023): Found entity 1: iobuf_in_sof File: /home/ben/code/de0_nano/build/db/iobuf_in_sof.tdf Line: 26
+Info (12128): Elaborating entity "iobuf_in_sof" for hierarchy "pin_clk50_0:pin_clk50_0|altiobuf_in:clk50_0|iobuf_in_sof:auto_generated" File: /opt/intelFPGA/20.1/quartus/libraries/megafunctions/altiobuf_in.tdf Line: 54
+Info (12128): Elaborating entity "pin_led_0" for hierarchy "pin_led_0:pin_led_0" File: /home/ben/code/de0_nano/build/top.v Line: 304
+Info (12128): Elaborating entity "altiobuf_out" for hierarchy "pin_led_0:pin_led_0|altiobuf_out:led_0" File: /home/ben/code/de0_nano/build/top.v Line: 47
+Info (12130): Elaborated megafunction instantiation "pin_led_0:pin_led_0|altiobuf_out:led_0" File: /home/ben/code/de0_nano/build/top.v Line: 47
+Info (12133): Instantiated megafunction "pin_led_0:pin_led_0|altiobuf_out:led_0" with the following parameter: File: /home/ben/code/de0_nano/build/top.v Line: 47
+    Info (12134): Parameter "enable_bus_hold" = "FALSE"
+    Info (12134): Parameter "number_of_channels" = "00000000000000000000000000000001"
+    Info (12134): Parameter "use_differential_mode" = "FALSE"
+    Info (12134): Parameter "use_oe" = "FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/iobuf_out_96h.tdf
+    Info (12023): Found entity 1: iobuf_out_96h File: /home/ben/code/de0_nano/build/db/iobuf_out_96h.tdf Line: 26
+Info (12128): Elaborating entity "iobuf_out_96h" for hierarchy "pin_led_0:pin_led_0|altiobuf_out:led_0|iobuf_out_96h:auto_generated" File: /opt/intelFPGA/20.1/quartus/libraries/megafunctions/altiobuf_out.tdf Line: 66
+Info (12128): Elaborating entity "pin_led_1" for hierarchy "pin_led_1:pin_led_1" File: /home/ben/code/de0_nano/build/top.v Line: 308
+Info (12128): Elaborating entity "altiobuf_out" for hierarchy "pin_led_1:pin_led_1|altiobuf_out:led_1" File: /home/ben/code/de0_nano/build/top.v Line: 61
+Info (12130): Elaborated megafunction instantiation "pin_led_1:pin_led_1|altiobuf_out:led_1" File: /home/ben/code/de0_nano/build/top.v Line: 61
+Info (12133): Instantiated megafunction "pin_led_1:pin_led_1|altiobuf_out:led_1" with the following parameter: File: /home/ben/code/de0_nano/build/top.v Line: 61
+    Info (12134): Parameter "enable_bus_hold" = "FALSE"
+    Info (12134): Parameter "number_of_channels" = "00000000000000000000000000000001"
+    Info (12134): Parameter "use_differential_mode" = "FALSE"
+    Info (12134): Parameter "use_oe" = "FALSE"
+Info (12128): Elaborating entity "pin_led_2" for hierarchy "pin_led_2:pin_led_2" File: /home/ben/code/de0_nano/build/top.v Line: 312
+Info (12128): Elaborating entity "altiobuf_out" for hierarchy "pin_led_2:pin_led_2|altiobuf_out:led_2" File: /home/ben/code/de0_nano/build/top.v Line: 75
+Info (12130): Elaborated megafunction instantiation "pin_led_2:pin_led_2|altiobuf_out:led_2" File: /home/ben/code/de0_nano/build/top.v Line: 75
+Info (12133): Instantiated megafunction "pin_led_2:pin_led_2|altiobuf_out:led_2" with the following parameter: File: /home/ben/code/de0_nano/build/top.v Line: 75
+    Info (12134): Parameter "enable_bus_hold" = "FALSE"
+    Info (12134): Parameter "number_of_channels" = "00000000000000000000000000000001"
+    Info (12134): Parameter "use_differential_mode" = "FALSE"
+    Info (12134): Parameter "use_oe" = "FALSE"
+Info (12128): Elaborating entity "pin_led_3" for hierarchy "pin_led_3:pin_led_3" File: /home/ben/code/de0_nano/build/top.v Line: 316
+Info (12128): Elaborating entity "altiobuf_out" for hierarchy "pin_led_3:pin_led_3|altiobuf_out:led_3" File: /home/ben/code/de0_nano/build/top.v Line: 89
+Info (12130): Elaborated megafunction instantiation "pin_led_3:pin_led_3|altiobuf_out:led_3" File: /home/ben/code/de0_nano/build/top.v Line: 89
+Info (12133): Instantiated megafunction "pin_led_3:pin_led_3|altiobuf_out:led_3" with the following parameter: File: /home/ben/code/de0_nano/build/top.v Line: 89
+    Info (12134): Parameter "enable_bus_hold" = "FALSE"
+    Info (12134): Parameter "number_of_channels" = "00000000000000000000000000000001"
+    Info (12134): Parameter "use_differential_mode" = "FALSE"
+    Info (12134): Parameter "use_oe" = "FALSE"
+Info (12128): Elaborating entity "pin_led_4" for hierarchy "pin_led_4:pin_led_4" File: /home/ben/code/de0_nano/build/top.v Line: 320
+Info (12128): Elaborating entity "altiobuf_out" for hierarchy "pin_led_4:pin_led_4|altiobuf_out:led_4" File: /home/ben/code/de0_nano/build/top.v Line: 103
+Info (12130): Elaborated megafunction instantiation "pin_led_4:pin_led_4|altiobuf_out:led_4" File: /home/ben/code/de0_nano/build/top.v Line: 103
+Info (12133): Instantiated megafunction "pin_led_4:pin_led_4|altiobuf_out:led_4" with the following parameter: File: /home/ben/code/de0_nano/build/top.v Line: 103
+    Info (12134): Parameter "enable_bus_hold" = "FALSE"
+    Info (12134): Parameter "number_of_channels" = "00000000000000000000000000000001"
+    Info (12134): Parameter "use_differential_mode" = "FALSE"
+    Info (12134): Parameter "use_oe" = "FALSE"
+Info (12128): Elaborating entity "pin_led_5" for hierarchy "pin_led_5:pin_led_5" File: /home/ben/code/de0_nano/build/top.v Line: 324
+Info (12128): Elaborating entity "altiobuf_out" for hierarchy "pin_led_5:pin_led_5|altiobuf_out:led_5" File: /home/ben/code/de0_nano/build/top.v Line: 117
+Info (12130): Elaborated megafunction instantiation "pin_led_5:pin_led_5|altiobuf_out:led_5" File: /home/ben/code/de0_nano/build/top.v Line: 117
+Info (12133): Instantiated megafunction "pin_led_5:pin_led_5|altiobuf_out:led_5" with the following parameter: File: /home/ben/code/de0_nano/build/top.v Line: 117
+    Info (12134): Parameter "enable_bus_hold" = "FALSE"
+    Info (12134): Parameter "number_of_channels" = "00000000000000000000000000000001"
+    Info (12134): Parameter "use_differential_mode" = "FALSE"
+    Info (12134): Parameter "use_oe" = "FALSE"
+Info (12128): Elaborating entity "pin_led_6" for hierarchy "pin_led_6:pin_led_6" File: /home/ben/code/de0_nano/build/top.v Line: 328
+Info (12128): Elaborating entity "altiobuf_out" for hierarchy "pin_led_6:pin_led_6|altiobuf_out:led_6" File: /home/ben/code/de0_nano/build/top.v Line: 131
+Info (12130): Elaborated megafunction instantiation "pin_led_6:pin_led_6|altiobuf_out:led_6" File: /home/ben/code/de0_nano/build/top.v Line: 131
+Info (12133): Instantiated megafunction "pin_led_6:pin_led_6|altiobuf_out:led_6" with the following parameter: File: /home/ben/code/de0_nano/build/top.v Line: 131
+    Info (12134): Parameter "enable_bus_hold" = "FALSE"
+    Info (12134): Parameter "number_of_channels" = "00000000000000000000000000000001"
+    Info (12134): Parameter "use_differential_mode" = "FALSE"
+    Info (12134): Parameter "use_oe" = "FALSE"
+Info (12128): Elaborating entity "pin_led_7" for hierarchy "pin_led_7:pin_led_7" File: /home/ben/code/de0_nano/build/top.v Line: 332
+Info (12128): Elaborating entity "altiobuf_out" for hierarchy "pin_led_7:pin_led_7|altiobuf_out:led_7" File: /home/ben/code/de0_nano/build/top.v Line: 145
+Info (12130): Elaborated megafunction instantiation "pin_led_7:pin_led_7|altiobuf_out:led_7" File: /home/ben/code/de0_nano/build/top.v Line: 145
+Info (12133): Instantiated megafunction "pin_led_7:pin_led_7|altiobuf_out:led_7" with the following parameter: File: /home/ben/code/de0_nano/build/top.v Line: 145
+    Info (12134): Parameter "enable_bus_hold" = "FALSE"
+    Info (12134): Parameter "number_of_channels" = "00000000000000000000000000000001"
+    Info (12134): Parameter "use_differential_mode" = "FALSE"
+    Info (12134): Parameter "use_oe" = "FALSE"
+Info (12128): Elaborating entity "pin_switch_0" for hierarchy "pin_switch_0:pin_switch_0" File: /home/ben/code/de0_nano/build/top.v Line: 336
+Info (12128): Elaborating entity "altiobuf_in" for hierarchy "pin_switch_0:pin_switch_0|altiobuf_in:switch_0" File: /home/ben/code/de0_nano/build/top.v Line: 158
+Info (12130): Elaborated megafunction instantiation "pin_switch_0:pin_switch_0|altiobuf_in:switch_0" File: /home/ben/code/de0_nano/build/top.v Line: 158
+Info (12133): Instantiated megafunction "pin_switch_0:pin_switch_0|altiobuf_in:switch_0" with the following parameter: File: /home/ben/code/de0_nano/build/top.v Line: 158
+    Info (12134): Parameter "enable_bus_hold" = "FALSE"
+    Info (12134): Parameter "number_of_channels" = "00000000000000000000000000000001"
+    Info (12134): Parameter "use_differential_mode" = "FALSE"
+Info (12128): Elaborating entity "pin_switch_1" for hierarchy "pin_switch_1:pin_switch_1" File: /home/ben/code/de0_nano/build/top.v Line: 339
+Info (12128): Elaborating entity "altiobuf_in" for hierarchy "pin_switch_1:pin_switch_1|altiobuf_in:switch_1" File: /home/ben/code/de0_nano/build/top.v Line: 171
+Info (12130): Elaborated megafunction instantiation "pin_switch_1:pin_switch_1|altiobuf_in:switch_1" File: /home/ben/code/de0_nano/build/top.v Line: 171
+Info (12133): Instantiated megafunction "pin_switch_1:pin_switch_1|altiobuf_in:switch_1" with the following parameter: File: /home/ben/code/de0_nano/build/top.v Line: 171
+    Info (12134): Parameter "enable_bus_hold" = "FALSE"
+    Info (12134): Parameter "number_of_channels" = "00000000000000000000000000000001"
+    Info (12134): Parameter "use_differential_mode" = "FALSE"
+Info (12128): Elaborating entity "pin_switch_2" for hierarchy "pin_switch_2:pin_switch_2" File: /home/ben/code/de0_nano/build/top.v Line: 342
+Info (12128): Elaborating entity "altiobuf_in" for hierarchy "pin_switch_2:pin_switch_2|altiobuf_in:switch_2" File: /home/ben/code/de0_nano/build/top.v Line: 184
+Info (12130): Elaborated megafunction instantiation "pin_switch_2:pin_switch_2|altiobuf_in:switch_2" File: /home/ben/code/de0_nano/build/top.v Line: 184
+Info (12133): Instantiated megafunction "pin_switch_2:pin_switch_2|altiobuf_in:switch_2" with the following parameter: File: /home/ben/code/de0_nano/build/top.v Line: 184
+    Info (12134): Parameter "enable_bus_hold" = "FALSE"
+    Info (12134): Parameter "number_of_channels" = "00000000000000000000000000000001"
+    Info (12134): Parameter "use_differential_mode" = "FALSE"
+Info (12128): Elaborating entity "pin_switch_3" for hierarchy "pin_switch_3:pin_switch_3" File: /home/ben/code/de0_nano/build/top.v Line: 345
+Info (12128): Elaborating entity "altiobuf_in" for hierarchy "pin_switch_3:pin_switch_3|altiobuf_in:switch_3" File: /home/ben/code/de0_nano/build/top.v Line: 197
+Info (12130): Elaborated megafunction instantiation "pin_switch_3:pin_switch_3|altiobuf_in:switch_3" File: /home/ben/code/de0_nano/build/top.v Line: 197
+Info (12133): Instantiated megafunction "pin_switch_3:pin_switch_3|altiobuf_in:switch_3" with the following parameter: File: /home/ben/code/de0_nano/build/top.v Line: 197
+    Info (12134): Parameter "enable_bus_hold" = "FALSE"
+    Info (12134): Parameter "number_of_channels" = "00000000000000000000000000000001"
+    Info (12134): Parameter "use_differential_mode" = "FALSE"
+Info (13014): Ignored 1 buffer(s)
+    Info (13019): Ignored 1 SOFT buffer(s)
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file /home/ben/code/de0_nano/build/top.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "switch_3__io" File: /home/ben/code/de0_nano/build/top.v Line: 272
+    Warning (15610): No output dependent on input pin "switch_2__io" File: /home/ben/code/de0_nano/build/top.v Line: 271
+    Warning (15610): No output dependent on input pin "switch_1__io" File: /home/ben/code/de0_nano/build/top.v Line: 270
+Info (21057): Implemented 55 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 42 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 424 megabytes
+    Info: Processing ended: Tue Sep 15 11:44:29 2020
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:29
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/ben/code/de0_nano/build/top.map.smsg.
+
+

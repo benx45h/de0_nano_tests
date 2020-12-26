@@ -1,0 +1,762 @@
+|top
+led_1__io << pin_led_1:pin_led_1.led_1__io
+led_2__io << pin_led_2:pin_led_2.led_2__io
+led_3__io << pin_led_3:pin_led_3.led_3__io
+led_4__io << pin_led_4:pin_led_4.led_4__io
+led_5__io << pin_led_5:pin_led_5.led_5__io
+led_6__io << pin_led_6:pin_led_6.led_6__io
+led_7__io << pin_led_7:pin_led_7.led_7__io
+switch_0__io => switch_0__io.IN1
+switch_1__io => switch_1__io.IN1
+switch_2__io => switch_2__io.IN1
+switch_3__io => switch_3__io.IN1
+clk50_0__io => clk50_0__io.IN1
+led_0__io << pin_led_0:pin_led_0.led_0__io
+
+
+|top|cd_sync:cd_sync
+clk <= clk.DB_MAX_OUTPUT_PORT_TYPE
+clk50_0__i => clk50_0__i~0.DATAIN
+rst <= reset_sync:reset_sync.rst
+
+
+|top|cd_sync:cd_sync|reset_sync:reset_sync
+clk => clk.IN1
+rst <= altera_std_synchronizer:U$$0.dout
+
+
+|top|cd_sync:cd_sync|reset_sync:reset_sync|altera_std_synchronizer:U$$0
+clk => dreg[0].CLK
+clk => din_s1.CLK
+reset_n => dreg[0].ACLR
+reset_n => din_s1.ACLR
+din => din_s1.DATAIN
+dout <= dout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|pin_clk50_0:pin_clk50_0
+clk50_0__io => clk50_0__io.IN1
+clk50_0__i <= altiobuf_in:clk50_0.dataout
+
+
+|top|pin_clk50_0:pin_clk50_0|altiobuf_in:clk50_0
+datain[0] => iobuf_in_sof:auto_generated.datain[0]
+datain_b[0] => ~NO_FANOUT~
+dataout[0] <= iobuf_in_sof:auto_generated.dataout[0]
+dynamicterminationcontrol[0] => ~NO_FANOUT~
+io_config_clk => ~NO_FANOUT~
+io_config_clkena[0] => ~NO_FANOUT~
+io_config_datain => ~NO_FANOUT~
+io_config_update => ~NO_FANOUT~
+
+
+|top|pin_clk50_0:pin_clk50_0|altiobuf_in:clk50_0|iobuf_in_sof:auto_generated
+datain[0] => ibufa[0].DATA
+dataout[0] <= ibufa[0].OUT
+
+
+|top|pin_led_0:pin_led_0
+led_0__io <= altiobuf_out:led_0.dataout
+led_0__o => led_0__o.IN1
+
+
+|top|pin_led_0:pin_led_0|altiobuf_out:led_0
+datain[0] => iobuf_out_96h:auto_generated.datain[0]
+dataout[0] <= iobuf_out_96h:auto_generated.dataout[0]
+dataout_b[0] <= <GND>
+io_config_clk => ~NO_FANOUT~
+io_config_clkena[0] => ~NO_FANOUT~
+io_config_datain => ~NO_FANOUT~
+io_config_update => ~NO_FANOUT~
+oe[0] => ~NO_FANOUT~
+oe_b[0] => ~NO_FANOUT~
+parallelterminationcontrol[0] => ~NO_FANOUT~
+parallelterminationcontrol[1] => ~NO_FANOUT~
+parallelterminationcontrol[2] => ~NO_FANOUT~
+parallelterminationcontrol[3] => ~NO_FANOUT~
+parallelterminationcontrol[4] => ~NO_FANOUT~
+parallelterminationcontrol[5] => ~NO_FANOUT~
+parallelterminationcontrol[6] => ~NO_FANOUT~
+parallelterminationcontrol[7] => ~NO_FANOUT~
+parallelterminationcontrol[8] => ~NO_FANOUT~
+parallelterminationcontrol[9] => ~NO_FANOUT~
+parallelterminationcontrol[10] => ~NO_FANOUT~
+parallelterminationcontrol[11] => ~NO_FANOUT~
+parallelterminationcontrol[12] => ~NO_FANOUT~
+parallelterminationcontrol[13] => ~NO_FANOUT~
+parallelterminationcontrol_b[0] => ~NO_FANOUT~
+parallelterminationcontrol_b[1] => ~NO_FANOUT~
+parallelterminationcontrol_b[2] => ~NO_FANOUT~
+parallelterminationcontrol_b[3] => ~NO_FANOUT~
+parallelterminationcontrol_b[4] => ~NO_FANOUT~
+parallelterminationcontrol_b[5] => ~NO_FANOUT~
+parallelterminationcontrol_b[6] => ~NO_FANOUT~
+parallelterminationcontrol_b[7] => ~NO_FANOUT~
+parallelterminationcontrol_b[8] => ~NO_FANOUT~
+parallelterminationcontrol_b[9] => ~NO_FANOUT~
+parallelterminationcontrol_b[10] => ~NO_FANOUT~
+parallelterminationcontrol_b[11] => ~NO_FANOUT~
+parallelterminationcontrol_b[12] => ~NO_FANOUT~
+parallelterminationcontrol_b[13] => ~NO_FANOUT~
+seriesterminationcontrol[0] => ~NO_FANOUT~
+seriesterminationcontrol[1] => ~NO_FANOUT~
+seriesterminationcontrol[2] => ~NO_FANOUT~
+seriesterminationcontrol[3] => ~NO_FANOUT~
+seriesterminationcontrol[4] => ~NO_FANOUT~
+seriesterminationcontrol[5] => ~NO_FANOUT~
+seriesterminationcontrol[6] => ~NO_FANOUT~
+seriesterminationcontrol[7] => ~NO_FANOUT~
+seriesterminationcontrol[8] => ~NO_FANOUT~
+seriesterminationcontrol[9] => ~NO_FANOUT~
+seriesterminationcontrol[10] => ~NO_FANOUT~
+seriesterminationcontrol[11] => ~NO_FANOUT~
+seriesterminationcontrol[12] => ~NO_FANOUT~
+seriesterminationcontrol[13] => ~NO_FANOUT~
+seriesterminationcontrol_b[0] => ~NO_FANOUT~
+seriesterminationcontrol_b[1] => ~NO_FANOUT~
+seriesterminationcontrol_b[2] => ~NO_FANOUT~
+seriesterminationcontrol_b[3] => ~NO_FANOUT~
+seriesterminationcontrol_b[4] => ~NO_FANOUT~
+seriesterminationcontrol_b[5] => ~NO_FANOUT~
+seriesterminationcontrol_b[6] => ~NO_FANOUT~
+seriesterminationcontrol_b[7] => ~NO_FANOUT~
+seriesterminationcontrol_b[8] => ~NO_FANOUT~
+seriesterminationcontrol_b[9] => ~NO_FANOUT~
+seriesterminationcontrol_b[10] => ~NO_FANOUT~
+seriesterminationcontrol_b[11] => ~NO_FANOUT~
+seriesterminationcontrol_b[12] => ~NO_FANOUT~
+seriesterminationcontrol_b[13] => ~NO_FANOUT~
+
+
+|top|pin_led_0:pin_led_0|altiobuf_out:led_0|iobuf_out_96h:auto_generated
+datain[0] => obufa[0].IN
+dataout[0] <= obufa[0].OUT
+
+
+|top|pin_led_1:pin_led_1
+led_1__io <= altiobuf_out:led_1.dataout
+led_1__o => led_1__o.IN1
+
+
+|top|pin_led_1:pin_led_1|altiobuf_out:led_1
+datain[0] => iobuf_out_96h:auto_generated.datain[0]
+dataout[0] <= iobuf_out_96h:auto_generated.dataout[0]
+dataout_b[0] <= <GND>
+io_config_clk => ~NO_FANOUT~
+io_config_clkena[0] => ~NO_FANOUT~
+io_config_datain => ~NO_FANOUT~
+io_config_update => ~NO_FANOUT~
+oe[0] => ~NO_FANOUT~
+oe_b[0] => ~NO_FANOUT~
+parallelterminationcontrol[0] => ~NO_FANOUT~
+parallelterminationcontrol[1] => ~NO_FANOUT~
+parallelterminationcontrol[2] => ~NO_FANOUT~
+parallelterminationcontrol[3] => ~NO_FANOUT~
+parallelterminationcontrol[4] => ~NO_FANOUT~
+parallelterminationcontrol[5] => ~NO_FANOUT~
+parallelterminationcontrol[6] => ~NO_FANOUT~
+parallelterminationcontrol[7] => ~NO_FANOUT~
+parallelterminationcontrol[8] => ~NO_FANOUT~
+parallelterminationcontrol[9] => ~NO_FANOUT~
+parallelterminationcontrol[10] => ~NO_FANOUT~
+parallelterminationcontrol[11] => ~NO_FANOUT~
+parallelterminationcontrol[12] => ~NO_FANOUT~
+parallelterminationcontrol[13] => ~NO_FANOUT~
+parallelterminationcontrol_b[0] => ~NO_FANOUT~
+parallelterminationcontrol_b[1] => ~NO_FANOUT~
+parallelterminationcontrol_b[2] => ~NO_FANOUT~
+parallelterminationcontrol_b[3] => ~NO_FANOUT~
+parallelterminationcontrol_b[4] => ~NO_FANOUT~
+parallelterminationcontrol_b[5] => ~NO_FANOUT~
+parallelterminationcontrol_b[6] => ~NO_FANOUT~
+parallelterminationcontrol_b[7] => ~NO_FANOUT~
+parallelterminationcontrol_b[8] => ~NO_FANOUT~
+parallelterminationcontrol_b[9] => ~NO_FANOUT~
+parallelterminationcontrol_b[10] => ~NO_FANOUT~
+parallelterminationcontrol_b[11] => ~NO_FANOUT~
+parallelterminationcontrol_b[12] => ~NO_FANOUT~
+parallelterminationcontrol_b[13] => ~NO_FANOUT~
+seriesterminationcontrol[0] => ~NO_FANOUT~
+seriesterminationcontrol[1] => ~NO_FANOUT~
+seriesterminationcontrol[2] => ~NO_FANOUT~
+seriesterminationcontrol[3] => ~NO_FANOUT~
+seriesterminationcontrol[4] => ~NO_FANOUT~
+seriesterminationcontrol[5] => ~NO_FANOUT~
+seriesterminationcontrol[6] => ~NO_FANOUT~
+seriesterminationcontrol[7] => ~NO_FANOUT~
+seriesterminationcontrol[8] => ~NO_FANOUT~
+seriesterminationcontrol[9] => ~NO_FANOUT~
+seriesterminationcontrol[10] => ~NO_FANOUT~
+seriesterminationcontrol[11] => ~NO_FANOUT~
+seriesterminationcontrol[12] => ~NO_FANOUT~
+seriesterminationcontrol[13] => ~NO_FANOUT~
+seriesterminationcontrol_b[0] => ~NO_FANOUT~
+seriesterminationcontrol_b[1] => ~NO_FANOUT~
+seriesterminationcontrol_b[2] => ~NO_FANOUT~
+seriesterminationcontrol_b[3] => ~NO_FANOUT~
+seriesterminationcontrol_b[4] => ~NO_FANOUT~
+seriesterminationcontrol_b[5] => ~NO_FANOUT~
+seriesterminationcontrol_b[6] => ~NO_FANOUT~
+seriesterminationcontrol_b[7] => ~NO_FANOUT~
+seriesterminationcontrol_b[8] => ~NO_FANOUT~
+seriesterminationcontrol_b[9] => ~NO_FANOUT~
+seriesterminationcontrol_b[10] => ~NO_FANOUT~
+seriesterminationcontrol_b[11] => ~NO_FANOUT~
+seriesterminationcontrol_b[12] => ~NO_FANOUT~
+seriesterminationcontrol_b[13] => ~NO_FANOUT~
+
+
+|top|pin_led_1:pin_led_1|altiobuf_out:led_1|iobuf_out_96h:auto_generated
+datain[0] => obufa[0].IN
+dataout[0] <= obufa[0].OUT
+
+
+|top|pin_led_2:pin_led_2
+led_2__io <= altiobuf_out:led_2.dataout
+led_2__o => led_2__o.IN1
+
+
+|top|pin_led_2:pin_led_2|altiobuf_out:led_2
+datain[0] => iobuf_out_96h:auto_generated.datain[0]
+dataout[0] <= iobuf_out_96h:auto_generated.dataout[0]
+dataout_b[0] <= <GND>
+io_config_clk => ~NO_FANOUT~
+io_config_clkena[0] => ~NO_FANOUT~
+io_config_datain => ~NO_FANOUT~
+io_config_update => ~NO_FANOUT~
+oe[0] => ~NO_FANOUT~
+oe_b[0] => ~NO_FANOUT~
+parallelterminationcontrol[0] => ~NO_FANOUT~
+parallelterminationcontrol[1] => ~NO_FANOUT~
+parallelterminationcontrol[2] => ~NO_FANOUT~
+parallelterminationcontrol[3] => ~NO_FANOUT~
+parallelterminationcontrol[4] => ~NO_FANOUT~
+parallelterminationcontrol[5] => ~NO_FANOUT~
+parallelterminationcontrol[6] => ~NO_FANOUT~
+parallelterminationcontrol[7] => ~NO_FANOUT~
+parallelterminationcontrol[8] => ~NO_FANOUT~
+parallelterminationcontrol[9] => ~NO_FANOUT~
+parallelterminationcontrol[10] => ~NO_FANOUT~
+parallelterminationcontrol[11] => ~NO_FANOUT~
+parallelterminationcontrol[12] => ~NO_FANOUT~
+parallelterminationcontrol[13] => ~NO_FANOUT~
+parallelterminationcontrol_b[0] => ~NO_FANOUT~
+parallelterminationcontrol_b[1] => ~NO_FANOUT~
+parallelterminationcontrol_b[2] => ~NO_FANOUT~
+parallelterminationcontrol_b[3] => ~NO_FANOUT~
+parallelterminationcontrol_b[4] => ~NO_FANOUT~
+parallelterminationcontrol_b[5] => ~NO_FANOUT~
+parallelterminationcontrol_b[6] => ~NO_FANOUT~
+parallelterminationcontrol_b[7] => ~NO_FANOUT~
+parallelterminationcontrol_b[8] => ~NO_FANOUT~
+parallelterminationcontrol_b[9] => ~NO_FANOUT~
+parallelterminationcontrol_b[10] => ~NO_FANOUT~
+parallelterminationcontrol_b[11] => ~NO_FANOUT~
+parallelterminationcontrol_b[12] => ~NO_FANOUT~
+parallelterminationcontrol_b[13] => ~NO_FANOUT~
+seriesterminationcontrol[0] => ~NO_FANOUT~
+seriesterminationcontrol[1] => ~NO_FANOUT~
+seriesterminationcontrol[2] => ~NO_FANOUT~
+seriesterminationcontrol[3] => ~NO_FANOUT~
+seriesterminationcontrol[4] => ~NO_FANOUT~
+seriesterminationcontrol[5] => ~NO_FANOUT~
+seriesterminationcontrol[6] => ~NO_FANOUT~
+seriesterminationcontrol[7] => ~NO_FANOUT~
+seriesterminationcontrol[8] => ~NO_FANOUT~
+seriesterminationcontrol[9] => ~NO_FANOUT~
+seriesterminationcontrol[10] => ~NO_FANOUT~
+seriesterminationcontrol[11] => ~NO_FANOUT~
+seriesterminationcontrol[12] => ~NO_FANOUT~
+seriesterminationcontrol[13] => ~NO_FANOUT~
+seriesterminationcontrol_b[0] => ~NO_FANOUT~
+seriesterminationcontrol_b[1] => ~NO_FANOUT~
+seriesterminationcontrol_b[2] => ~NO_FANOUT~
+seriesterminationcontrol_b[3] => ~NO_FANOUT~
+seriesterminationcontrol_b[4] => ~NO_FANOUT~
+seriesterminationcontrol_b[5] => ~NO_FANOUT~
+seriesterminationcontrol_b[6] => ~NO_FANOUT~
+seriesterminationcontrol_b[7] => ~NO_FANOUT~
+seriesterminationcontrol_b[8] => ~NO_FANOUT~
+seriesterminationcontrol_b[9] => ~NO_FANOUT~
+seriesterminationcontrol_b[10] => ~NO_FANOUT~
+seriesterminationcontrol_b[11] => ~NO_FANOUT~
+seriesterminationcontrol_b[12] => ~NO_FANOUT~
+seriesterminationcontrol_b[13] => ~NO_FANOUT~
+
+
+|top|pin_led_2:pin_led_2|altiobuf_out:led_2|iobuf_out_96h:auto_generated
+datain[0] => obufa[0].IN
+dataout[0] <= obufa[0].OUT
+
+
+|top|pin_led_3:pin_led_3
+led_3__io <= altiobuf_out:led_3.dataout
+led_3__o => led_3__o.IN1
+
+
+|top|pin_led_3:pin_led_3|altiobuf_out:led_3
+datain[0] => iobuf_out_96h:auto_generated.datain[0]
+dataout[0] <= iobuf_out_96h:auto_generated.dataout[0]
+dataout_b[0] <= <GND>
+io_config_clk => ~NO_FANOUT~
+io_config_clkena[0] => ~NO_FANOUT~
+io_config_datain => ~NO_FANOUT~
+io_config_update => ~NO_FANOUT~
+oe[0] => ~NO_FANOUT~
+oe_b[0] => ~NO_FANOUT~
+parallelterminationcontrol[0] => ~NO_FANOUT~
+parallelterminationcontrol[1] => ~NO_FANOUT~
+parallelterminationcontrol[2] => ~NO_FANOUT~
+parallelterminationcontrol[3] => ~NO_FANOUT~
+parallelterminationcontrol[4] => ~NO_FANOUT~
+parallelterminationcontrol[5] => ~NO_FANOUT~
+parallelterminationcontrol[6] => ~NO_FANOUT~
+parallelterminationcontrol[7] => ~NO_FANOUT~
+parallelterminationcontrol[8] => ~NO_FANOUT~
+parallelterminationcontrol[9] => ~NO_FANOUT~
+parallelterminationcontrol[10] => ~NO_FANOUT~
+parallelterminationcontrol[11] => ~NO_FANOUT~
+parallelterminationcontrol[12] => ~NO_FANOUT~
+parallelterminationcontrol[13] => ~NO_FANOUT~
+parallelterminationcontrol_b[0] => ~NO_FANOUT~
+parallelterminationcontrol_b[1] => ~NO_FANOUT~
+parallelterminationcontrol_b[2] => ~NO_FANOUT~
+parallelterminationcontrol_b[3] => ~NO_FANOUT~
+parallelterminationcontrol_b[4] => ~NO_FANOUT~
+parallelterminationcontrol_b[5] => ~NO_FANOUT~
+parallelterminationcontrol_b[6] => ~NO_FANOUT~
+parallelterminationcontrol_b[7] => ~NO_FANOUT~
+parallelterminationcontrol_b[8] => ~NO_FANOUT~
+parallelterminationcontrol_b[9] => ~NO_FANOUT~
+parallelterminationcontrol_b[10] => ~NO_FANOUT~
+parallelterminationcontrol_b[11] => ~NO_FANOUT~
+parallelterminationcontrol_b[12] => ~NO_FANOUT~
+parallelterminationcontrol_b[13] => ~NO_FANOUT~
+seriesterminationcontrol[0] => ~NO_FANOUT~
+seriesterminationcontrol[1] => ~NO_FANOUT~
+seriesterminationcontrol[2] => ~NO_FANOUT~
+seriesterminationcontrol[3] => ~NO_FANOUT~
+seriesterminationcontrol[4] => ~NO_FANOUT~
+seriesterminationcontrol[5] => ~NO_FANOUT~
+seriesterminationcontrol[6] => ~NO_FANOUT~
+seriesterminationcontrol[7] => ~NO_FANOUT~
+seriesterminationcontrol[8] => ~NO_FANOUT~
+seriesterminationcontrol[9] => ~NO_FANOUT~
+seriesterminationcontrol[10] => ~NO_FANOUT~
+seriesterminationcontrol[11] => ~NO_FANOUT~
+seriesterminationcontrol[12] => ~NO_FANOUT~
+seriesterminationcontrol[13] => ~NO_FANOUT~
+seriesterminationcontrol_b[0] => ~NO_FANOUT~
+seriesterminationcontrol_b[1] => ~NO_FANOUT~
+seriesterminationcontrol_b[2] => ~NO_FANOUT~
+seriesterminationcontrol_b[3] => ~NO_FANOUT~
+seriesterminationcontrol_b[4] => ~NO_FANOUT~
+seriesterminationcontrol_b[5] => ~NO_FANOUT~
+seriesterminationcontrol_b[6] => ~NO_FANOUT~
+seriesterminationcontrol_b[7] => ~NO_FANOUT~
+seriesterminationcontrol_b[8] => ~NO_FANOUT~
+seriesterminationcontrol_b[9] => ~NO_FANOUT~
+seriesterminationcontrol_b[10] => ~NO_FANOUT~
+seriesterminationcontrol_b[11] => ~NO_FANOUT~
+seriesterminationcontrol_b[12] => ~NO_FANOUT~
+seriesterminationcontrol_b[13] => ~NO_FANOUT~
+
+
+|top|pin_led_3:pin_led_3|altiobuf_out:led_3|iobuf_out_96h:auto_generated
+datain[0] => obufa[0].IN
+dataout[0] <= obufa[0].OUT
+
+
+|top|pin_led_4:pin_led_4
+led_4__io <= altiobuf_out:led_4.dataout
+led_4__o => led_4__o.IN1
+
+
+|top|pin_led_4:pin_led_4|altiobuf_out:led_4
+datain[0] => iobuf_out_96h:auto_generated.datain[0]
+dataout[0] <= iobuf_out_96h:auto_generated.dataout[0]
+dataout_b[0] <= <GND>
+io_config_clk => ~NO_FANOUT~
+io_config_clkena[0] => ~NO_FANOUT~
+io_config_datain => ~NO_FANOUT~
+io_config_update => ~NO_FANOUT~
+oe[0] => ~NO_FANOUT~
+oe_b[0] => ~NO_FANOUT~
+parallelterminationcontrol[0] => ~NO_FANOUT~
+parallelterminationcontrol[1] => ~NO_FANOUT~
+parallelterminationcontrol[2] => ~NO_FANOUT~
+parallelterminationcontrol[3] => ~NO_FANOUT~
+parallelterminationcontrol[4] => ~NO_FANOUT~
+parallelterminationcontrol[5] => ~NO_FANOUT~
+parallelterminationcontrol[6] => ~NO_FANOUT~
+parallelterminationcontrol[7] => ~NO_FANOUT~
+parallelterminationcontrol[8] => ~NO_FANOUT~
+parallelterminationcontrol[9] => ~NO_FANOUT~
+parallelterminationcontrol[10] => ~NO_FANOUT~
+parallelterminationcontrol[11] => ~NO_FANOUT~
+parallelterminationcontrol[12] => ~NO_FANOUT~
+parallelterminationcontrol[13] => ~NO_FANOUT~
+parallelterminationcontrol_b[0] => ~NO_FANOUT~
+parallelterminationcontrol_b[1] => ~NO_FANOUT~
+parallelterminationcontrol_b[2] => ~NO_FANOUT~
+parallelterminationcontrol_b[3] => ~NO_FANOUT~
+parallelterminationcontrol_b[4] => ~NO_FANOUT~
+parallelterminationcontrol_b[5] => ~NO_FANOUT~
+parallelterminationcontrol_b[6] => ~NO_FANOUT~
+parallelterminationcontrol_b[7] => ~NO_FANOUT~
+parallelterminationcontrol_b[8] => ~NO_FANOUT~
+parallelterminationcontrol_b[9] => ~NO_FANOUT~
+parallelterminationcontrol_b[10] => ~NO_FANOUT~
+parallelterminationcontrol_b[11] => ~NO_FANOUT~
+parallelterminationcontrol_b[12] => ~NO_FANOUT~
+parallelterminationcontrol_b[13] => ~NO_FANOUT~
+seriesterminationcontrol[0] => ~NO_FANOUT~
+seriesterminationcontrol[1] => ~NO_FANOUT~
+seriesterminationcontrol[2] => ~NO_FANOUT~
+seriesterminationcontrol[3] => ~NO_FANOUT~
+seriesterminationcontrol[4] => ~NO_FANOUT~
+seriesterminationcontrol[5] => ~NO_FANOUT~
+seriesterminationcontrol[6] => ~NO_FANOUT~
+seriesterminationcontrol[7] => ~NO_FANOUT~
+seriesterminationcontrol[8] => ~NO_FANOUT~
+seriesterminationcontrol[9] => ~NO_FANOUT~
+seriesterminationcontrol[10] => ~NO_FANOUT~
+seriesterminationcontrol[11] => ~NO_FANOUT~
+seriesterminationcontrol[12] => ~NO_FANOUT~
+seriesterminationcontrol[13] => ~NO_FANOUT~
+seriesterminationcontrol_b[0] => ~NO_FANOUT~
+seriesterminationcontrol_b[1] => ~NO_FANOUT~
+seriesterminationcontrol_b[2] => ~NO_FANOUT~
+seriesterminationcontrol_b[3] => ~NO_FANOUT~
+seriesterminationcontrol_b[4] => ~NO_FANOUT~
+seriesterminationcontrol_b[5] => ~NO_FANOUT~
+seriesterminationcontrol_b[6] => ~NO_FANOUT~
+seriesterminationcontrol_b[7] => ~NO_FANOUT~
+seriesterminationcontrol_b[8] => ~NO_FANOUT~
+seriesterminationcontrol_b[9] => ~NO_FANOUT~
+seriesterminationcontrol_b[10] => ~NO_FANOUT~
+seriesterminationcontrol_b[11] => ~NO_FANOUT~
+seriesterminationcontrol_b[12] => ~NO_FANOUT~
+seriesterminationcontrol_b[13] => ~NO_FANOUT~
+
+
+|top|pin_led_4:pin_led_4|altiobuf_out:led_4|iobuf_out_96h:auto_generated
+datain[0] => obufa[0].IN
+dataout[0] <= obufa[0].OUT
+
+
+|top|pin_led_5:pin_led_5
+led_5__io <= altiobuf_out:led_5.dataout
+led_5__o => led_5__o.IN1
+
+
+|top|pin_led_5:pin_led_5|altiobuf_out:led_5
+datain[0] => iobuf_out_96h:auto_generated.datain[0]
+dataout[0] <= iobuf_out_96h:auto_generated.dataout[0]
+dataout_b[0] <= <GND>
+io_config_clk => ~NO_FANOUT~
+io_config_clkena[0] => ~NO_FANOUT~
+io_config_datain => ~NO_FANOUT~
+io_config_update => ~NO_FANOUT~
+oe[0] => ~NO_FANOUT~
+oe_b[0] => ~NO_FANOUT~
+parallelterminationcontrol[0] => ~NO_FANOUT~
+parallelterminationcontrol[1] => ~NO_FANOUT~
+parallelterminationcontrol[2] => ~NO_FANOUT~
+parallelterminationcontrol[3] => ~NO_FANOUT~
+parallelterminationcontrol[4] => ~NO_FANOUT~
+parallelterminationcontrol[5] => ~NO_FANOUT~
+parallelterminationcontrol[6] => ~NO_FANOUT~
+parallelterminationcontrol[7] => ~NO_FANOUT~
+parallelterminationcontrol[8] => ~NO_FANOUT~
+parallelterminationcontrol[9] => ~NO_FANOUT~
+parallelterminationcontrol[10] => ~NO_FANOUT~
+parallelterminationcontrol[11] => ~NO_FANOUT~
+parallelterminationcontrol[12] => ~NO_FANOUT~
+parallelterminationcontrol[13] => ~NO_FANOUT~
+parallelterminationcontrol_b[0] => ~NO_FANOUT~
+parallelterminationcontrol_b[1] => ~NO_FANOUT~
+parallelterminationcontrol_b[2] => ~NO_FANOUT~
+parallelterminationcontrol_b[3] => ~NO_FANOUT~
+parallelterminationcontrol_b[4] => ~NO_FANOUT~
+parallelterminationcontrol_b[5] => ~NO_FANOUT~
+parallelterminationcontrol_b[6] => ~NO_FANOUT~
+parallelterminationcontrol_b[7] => ~NO_FANOUT~
+parallelterminationcontrol_b[8] => ~NO_FANOUT~
+parallelterminationcontrol_b[9] => ~NO_FANOUT~
+parallelterminationcontrol_b[10] => ~NO_FANOUT~
+parallelterminationcontrol_b[11] => ~NO_FANOUT~
+parallelterminationcontrol_b[12] => ~NO_FANOUT~
+parallelterminationcontrol_b[13] => ~NO_FANOUT~
+seriesterminationcontrol[0] => ~NO_FANOUT~
+seriesterminationcontrol[1] => ~NO_FANOUT~
+seriesterminationcontrol[2] => ~NO_FANOUT~
+seriesterminationcontrol[3] => ~NO_FANOUT~
+seriesterminationcontrol[4] => ~NO_FANOUT~
+seriesterminationcontrol[5] => ~NO_FANOUT~
+seriesterminationcontrol[6] => ~NO_FANOUT~
+seriesterminationcontrol[7] => ~NO_FANOUT~
+seriesterminationcontrol[8] => ~NO_FANOUT~
+seriesterminationcontrol[9] => ~NO_FANOUT~
+seriesterminationcontrol[10] => ~NO_FANOUT~
+seriesterminationcontrol[11] => ~NO_FANOUT~
+seriesterminationcontrol[12] => ~NO_FANOUT~
+seriesterminationcontrol[13] => ~NO_FANOUT~
+seriesterminationcontrol_b[0] => ~NO_FANOUT~
+seriesterminationcontrol_b[1] => ~NO_FANOUT~
+seriesterminationcontrol_b[2] => ~NO_FANOUT~
+seriesterminationcontrol_b[3] => ~NO_FANOUT~
+seriesterminationcontrol_b[4] => ~NO_FANOUT~
+seriesterminationcontrol_b[5] => ~NO_FANOUT~
+seriesterminationcontrol_b[6] => ~NO_FANOUT~
+seriesterminationcontrol_b[7] => ~NO_FANOUT~
+seriesterminationcontrol_b[8] => ~NO_FANOUT~
+seriesterminationcontrol_b[9] => ~NO_FANOUT~
+seriesterminationcontrol_b[10] => ~NO_FANOUT~
+seriesterminationcontrol_b[11] => ~NO_FANOUT~
+seriesterminationcontrol_b[12] => ~NO_FANOUT~
+seriesterminationcontrol_b[13] => ~NO_FANOUT~
+
+
+|top|pin_led_5:pin_led_5|altiobuf_out:led_5|iobuf_out_96h:auto_generated
+datain[0] => obufa[0].IN
+dataout[0] <= obufa[0].OUT
+
+
+|top|pin_led_6:pin_led_6
+led_6__io <= altiobuf_out:led_6.dataout
+led_6__o => led_6__o.IN1
+
+
+|top|pin_led_6:pin_led_6|altiobuf_out:led_6
+datain[0] => iobuf_out_96h:auto_generated.datain[0]
+dataout[0] <= iobuf_out_96h:auto_generated.dataout[0]
+dataout_b[0] <= <GND>
+io_config_clk => ~NO_FANOUT~
+io_config_clkena[0] => ~NO_FANOUT~
+io_config_datain => ~NO_FANOUT~
+io_config_update => ~NO_FANOUT~
+oe[0] => ~NO_FANOUT~
+oe_b[0] => ~NO_FANOUT~
+parallelterminationcontrol[0] => ~NO_FANOUT~
+parallelterminationcontrol[1] => ~NO_FANOUT~
+parallelterminationcontrol[2] => ~NO_FANOUT~
+parallelterminationcontrol[3] => ~NO_FANOUT~
+parallelterminationcontrol[4] => ~NO_FANOUT~
+parallelterminationcontrol[5] => ~NO_FANOUT~
+parallelterminationcontrol[6] => ~NO_FANOUT~
+parallelterminationcontrol[7] => ~NO_FANOUT~
+parallelterminationcontrol[8] => ~NO_FANOUT~
+parallelterminationcontrol[9] => ~NO_FANOUT~
+parallelterminationcontrol[10] => ~NO_FANOUT~
+parallelterminationcontrol[11] => ~NO_FANOUT~
+parallelterminationcontrol[12] => ~NO_FANOUT~
+parallelterminationcontrol[13] => ~NO_FANOUT~
+parallelterminationcontrol_b[0] => ~NO_FANOUT~
+parallelterminationcontrol_b[1] => ~NO_FANOUT~
+parallelterminationcontrol_b[2] => ~NO_FANOUT~
+parallelterminationcontrol_b[3] => ~NO_FANOUT~
+parallelterminationcontrol_b[4] => ~NO_FANOUT~
+parallelterminationcontrol_b[5] => ~NO_FANOUT~
+parallelterminationcontrol_b[6] => ~NO_FANOUT~
+parallelterminationcontrol_b[7] => ~NO_FANOUT~
+parallelterminationcontrol_b[8] => ~NO_FANOUT~
+parallelterminationcontrol_b[9] => ~NO_FANOUT~
+parallelterminationcontrol_b[10] => ~NO_FANOUT~
+parallelterminationcontrol_b[11] => ~NO_FANOUT~
+parallelterminationcontrol_b[12] => ~NO_FANOUT~
+parallelterminationcontrol_b[13] => ~NO_FANOUT~
+seriesterminationcontrol[0] => ~NO_FANOUT~
+seriesterminationcontrol[1] => ~NO_FANOUT~
+seriesterminationcontrol[2] => ~NO_FANOUT~
+seriesterminationcontrol[3] => ~NO_FANOUT~
+seriesterminationcontrol[4] => ~NO_FANOUT~
+seriesterminationcontrol[5] => ~NO_FANOUT~
+seriesterminationcontrol[6] => ~NO_FANOUT~
+seriesterminationcontrol[7] => ~NO_FANOUT~
+seriesterminationcontrol[8] => ~NO_FANOUT~
+seriesterminationcontrol[9] => ~NO_FANOUT~
+seriesterminationcontrol[10] => ~NO_FANOUT~
+seriesterminationcontrol[11] => ~NO_FANOUT~
+seriesterminationcontrol[12] => ~NO_FANOUT~
+seriesterminationcontrol[13] => ~NO_FANOUT~
+seriesterminationcontrol_b[0] => ~NO_FANOUT~
+seriesterminationcontrol_b[1] => ~NO_FANOUT~
+seriesterminationcontrol_b[2] => ~NO_FANOUT~
+seriesterminationcontrol_b[3] => ~NO_FANOUT~
+seriesterminationcontrol_b[4] => ~NO_FANOUT~
+seriesterminationcontrol_b[5] => ~NO_FANOUT~
+seriesterminationcontrol_b[6] => ~NO_FANOUT~
+seriesterminationcontrol_b[7] => ~NO_FANOUT~
+seriesterminationcontrol_b[8] => ~NO_FANOUT~
+seriesterminationcontrol_b[9] => ~NO_FANOUT~
+seriesterminationcontrol_b[10] => ~NO_FANOUT~
+seriesterminationcontrol_b[11] => ~NO_FANOUT~
+seriesterminationcontrol_b[12] => ~NO_FANOUT~
+seriesterminationcontrol_b[13] => ~NO_FANOUT~
+
+
+|top|pin_led_6:pin_led_6|altiobuf_out:led_6|iobuf_out_96h:auto_generated
+datain[0] => obufa[0].IN
+dataout[0] <= obufa[0].OUT
+
+
+|top|pin_led_7:pin_led_7
+led_7__io <= altiobuf_out:led_7.dataout
+led_7__o => led_7__o.IN1
+
+
+|top|pin_led_7:pin_led_7|altiobuf_out:led_7
+datain[0] => iobuf_out_96h:auto_generated.datain[0]
+dataout[0] <= iobuf_out_96h:auto_generated.dataout[0]
+dataout_b[0] <= <GND>
+io_config_clk => ~NO_FANOUT~
+io_config_clkena[0] => ~NO_FANOUT~
+io_config_datain => ~NO_FANOUT~
+io_config_update => ~NO_FANOUT~
+oe[0] => ~NO_FANOUT~
+oe_b[0] => ~NO_FANOUT~
+parallelterminationcontrol[0] => ~NO_FANOUT~
+parallelterminationcontrol[1] => ~NO_FANOUT~
+parallelterminationcontrol[2] => ~NO_FANOUT~
+parallelterminationcontrol[3] => ~NO_FANOUT~
+parallelterminationcontrol[4] => ~NO_FANOUT~
+parallelterminationcontrol[5] => ~NO_FANOUT~
+parallelterminationcontrol[6] => ~NO_FANOUT~
+parallelterminationcontrol[7] => ~NO_FANOUT~
+parallelterminationcontrol[8] => ~NO_FANOUT~
+parallelterminationcontrol[9] => ~NO_FANOUT~
+parallelterminationcontrol[10] => ~NO_FANOUT~
+parallelterminationcontrol[11] => ~NO_FANOUT~
+parallelterminationcontrol[12] => ~NO_FANOUT~
+parallelterminationcontrol[13] => ~NO_FANOUT~
+parallelterminationcontrol_b[0] => ~NO_FANOUT~
+parallelterminationcontrol_b[1] => ~NO_FANOUT~
+parallelterminationcontrol_b[2] => ~NO_FANOUT~
+parallelterminationcontrol_b[3] => ~NO_FANOUT~
+parallelterminationcontrol_b[4] => ~NO_FANOUT~
+parallelterminationcontrol_b[5] => ~NO_FANOUT~
+parallelterminationcontrol_b[6] => ~NO_FANOUT~
+parallelterminationcontrol_b[7] => ~NO_FANOUT~
+parallelterminationcontrol_b[8] => ~NO_FANOUT~
+parallelterminationcontrol_b[9] => ~NO_FANOUT~
+parallelterminationcontrol_b[10] => ~NO_FANOUT~
+parallelterminationcontrol_b[11] => ~NO_FANOUT~
+parallelterminationcontrol_b[12] => ~NO_FANOUT~
+parallelterminationcontrol_b[13] => ~NO_FANOUT~
+seriesterminationcontrol[0] => ~NO_FANOUT~
+seriesterminationcontrol[1] => ~NO_FANOUT~
+seriesterminationcontrol[2] => ~NO_FANOUT~
+seriesterminationcontrol[3] => ~NO_FANOUT~
+seriesterminationcontrol[4] => ~NO_FANOUT~
+seriesterminationcontrol[5] => ~NO_FANOUT~
+seriesterminationcontrol[6] => ~NO_FANOUT~
+seriesterminationcontrol[7] => ~NO_FANOUT~
+seriesterminationcontrol[8] => ~NO_FANOUT~
+seriesterminationcontrol[9] => ~NO_FANOUT~
+seriesterminationcontrol[10] => ~NO_FANOUT~
+seriesterminationcontrol[11] => ~NO_FANOUT~
+seriesterminationcontrol[12] => ~NO_FANOUT~
+seriesterminationcontrol[13] => ~NO_FANOUT~
+seriesterminationcontrol_b[0] => ~NO_FANOUT~
+seriesterminationcontrol_b[1] => ~NO_FANOUT~
+seriesterminationcontrol_b[2] => ~NO_FANOUT~
+seriesterminationcontrol_b[3] => ~NO_FANOUT~
+seriesterminationcontrol_b[4] => ~NO_FANOUT~
+seriesterminationcontrol_b[5] => ~NO_FANOUT~
+seriesterminationcontrol_b[6] => ~NO_FANOUT~
+seriesterminationcontrol_b[7] => ~NO_FANOUT~
+seriesterminationcontrol_b[8] => ~NO_FANOUT~
+seriesterminationcontrol_b[9] => ~NO_FANOUT~
+seriesterminationcontrol_b[10] => ~NO_FANOUT~
+seriesterminationcontrol_b[11] => ~NO_FANOUT~
+seriesterminationcontrol_b[12] => ~NO_FANOUT~
+seriesterminationcontrol_b[13] => ~NO_FANOUT~
+
+
+|top|pin_led_7:pin_led_7|altiobuf_out:led_7|iobuf_out_96h:auto_generated
+datain[0] => obufa[0].IN
+dataout[0] <= obufa[0].OUT
+
+
+|top|pin_switch_0:pin_switch_0
+switch_0__io => switch_0__io.IN1
+switch_0__i <= altiobuf_in:switch_0.dataout
+
+
+|top|pin_switch_0:pin_switch_0|altiobuf_in:switch_0
+datain[0] => iobuf_in_sof:auto_generated.datain[0]
+datain_b[0] => ~NO_FANOUT~
+dataout[0] <= iobuf_in_sof:auto_generated.dataout[0]
+dynamicterminationcontrol[0] => ~NO_FANOUT~
+io_config_clk => ~NO_FANOUT~
+io_config_clkena[0] => ~NO_FANOUT~
+io_config_datain => ~NO_FANOUT~
+io_config_update => ~NO_FANOUT~
+
+
+|top|pin_switch_0:pin_switch_0|altiobuf_in:switch_0|iobuf_in_sof:auto_generated
+datain[0] => ibufa[0].DATA
+dataout[0] <= ibufa[0].OUT
+
+
+|top|pin_switch_1:pin_switch_1
+switch_1__io => switch_1__io.IN1
+
+
+|top|pin_switch_1:pin_switch_1|altiobuf_in:switch_1
+datain[0] => iobuf_in_sof:auto_generated.datain[0]
+datain_b[0] => ~NO_FANOUT~
+dataout[0] <= iobuf_in_sof:auto_generated.dataout[0]
+dynamicterminationcontrol[0] => ~NO_FANOUT~
+io_config_clk => ~NO_FANOUT~
+io_config_clkena[0] => ~NO_FANOUT~
+io_config_datain => ~NO_FANOUT~
+io_config_update => ~NO_FANOUT~
+
+
+|top|pin_switch_1:pin_switch_1|altiobuf_in:switch_1|iobuf_in_sof:auto_generated
+datain[0] => ibufa[0].DATA
+dataout[0] <= ibufa[0].OUT
+
+
+|top|pin_switch_2:pin_switch_2
+switch_2__io => switch_2__io.IN1
+
+
+|top|pin_switch_2:pin_switch_2|altiobuf_in:switch_2
+datain[0] => iobuf_in_sof:auto_generated.datain[0]
+datain_b[0] => ~NO_FANOUT~
+dataout[0] <= iobuf_in_sof:auto_generated.dataout[0]
+dynamicterminationcontrol[0] => ~NO_FANOUT~
+io_config_clk => ~NO_FANOUT~
+io_config_clkena[0] => ~NO_FANOUT~
+io_config_datain => ~NO_FANOUT~
+io_config_update => ~NO_FANOUT~
+
+
+|top|pin_switch_2:pin_switch_2|altiobuf_in:switch_2|iobuf_in_sof:auto_generated
+datain[0] => ibufa[0].DATA
+dataout[0] <= ibufa[0].OUT
+
+
+|top|pin_switch_3:pin_switch_3
+switch_3__io => switch_3__io.IN1
+
+
+|top|pin_switch_3:pin_switch_3|altiobuf_in:switch_3
+datain[0] => iobuf_in_sof:auto_generated.datain[0]
+datain_b[0] => ~NO_FANOUT~
+dataout[0] <= iobuf_in_sof:auto_generated.dataout[0]
+dynamicterminationcontrol[0] => ~NO_FANOUT~
+io_config_clk => ~NO_FANOUT~
+io_config_clkena[0] => ~NO_FANOUT~
+io_config_datain => ~NO_FANOUT~
+io_config_update => ~NO_FANOUT~
+
+
+|top|pin_switch_3:pin_switch_3|altiobuf_in:switch_3|iobuf_in_sof:auto_generated
+datain[0] => ibufa[0].DATA
+dataout[0] <= ibufa[0].OUT
+
+

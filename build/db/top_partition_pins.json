@@ -1,0 +1,49 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "led_1__io",
+					"strict" : false
+				},
+				{
+					"name" : "led_2__io",
+					"strict" : false
+				},
+				{
+					"name" : "led_3__io",
+					"strict" : false
+				},
+				{
+					"name" : "led_4__io",
+					"strict" : false
+				},
+				{
+					"name" : "led_5__io",
+					"strict" : false
+				},
+				{
+					"name" : "led_6__io",
+					"strict" : false
+				},
+				{
+					"name" : "led_7__io",
+					"strict" : false
+				},
+				{
+					"name" : "led_0__io",
+					"strict" : false
+				},
+				{
+					"name" : "switch_0__io",
+					"strict" : false
+				},
+				{
+					"name" : "clk50_0__io",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,117 @@
+Flow report for top
+Tue Sep 15 11:45:10 2020
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++------------------------------------+---------------------------------------------+
+; Flow Status                        ; Successful - Tue Sep 15 11:44:58 2020       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                      ; top                                         ;
+; Top-level Entity Name              ; top                                         ;
+; Family                             ; Cyclone IV E                                ;
+; Device                             ; EP4CE22F17C6                                ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 42 / 22,320 ( < 1 % )                       ;
+;     Total combinational functions  ; 41 / 22,320 ( < 1 % )                       ;
+;     Dedicated logic registers      ; 34 / 22,320 ( < 1 % )                       ;
+; Total registers                    ; 34                                          ;
+; Total pins                         ; 13 / 154 ( 8 % )                            ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
+; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
++------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 09/15/2020 11:44:18 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; top                 ;
++-------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                  ;
++-----------------------+--------------------------------+---------------+-------------+------------+
+; Assignment Name       ; Value                          ; Default Value ; Entity Name ; Section Id ;
++-----------------------+--------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID ; 61811222332714.160018465833133 ; --            ; --          ; --         ;
++-----------------------+--------------------------------+---------------+-------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:21     ; 1.0                     ; 417 MB              ; 00:00:28                           ;
+; Fitter               ; 00:00:16     ; 1.0                     ; 966 MB              ; 00:00:07                           ;
+; Assembler            ; 00:00:11     ; 1.0                     ; 348 MB              ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:11     ; 1.0                     ; 483 MB              ; 00:00:02                           ;
+; Total                ; 00:00:59     ; --                      ; --                  ; 00:00:38                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; ben              ; Arch Linux ; Arch Linux ; x86_64         ;
+; Fitter               ; ben              ; Arch Linux ; Arch Linux ; x86_64         ;
+; Assembler            ; ben              ; Arch Linux ; Arch Linux ; x86_64         ;
+; Timing Analyzer      ; ben              ; Arch Linux ; Arch Linux ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --rev=top top
+quartus_fit --rev=top top
+quartus_asm --rev=top top
+quartus_sta --rev=top top
+
+
+
